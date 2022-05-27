@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    
+</head>
+
+<body >
+   
+    <!-- Navigation bar --> 
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(to right, #ffbb00,lightyellow) ;">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+            <img src="{% static 'logo.png' %}" alt="" width="70" height="40">
+            <b>Face Analysis </b>
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!--<a style="color: black;"><b> Hello !</b></a>-->
+            <span  style="color:#6C17BA;" class="hello-msg"><b> Hello ! {{request.user}} ....</b></span>
+            <span  style="margin-right:5px ;" ><a  class="btn btn-primary " class="hello-msg" href="{% url 'logout' %}" ><b>  Logout </b></a></span>
+        </button>
+
+     <div class="collapse navbar-collapse" id="navbarNav">
+
+
+     <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+             <a style="color: #6C17BA; font-size:1.25vw;"><b> Hello, {{request.user}}!</b></a>
+         </li>
+         <li class="nav-item">
+             <a  class="btn btn-primary " href="{% url 'logout' %}">Logout</a>
+         </li>
+         
+     </ul>
+     </div>
+
+    </nav>
+
+    <!-- body -->
+    <div class="container" >
+        <br>
+        <h1 class="display-11" align="center">Facial Analysis</h1>
+        <br>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+            
+            {% csrf_token %}
+            
+            <div class="input-group">
+                <label for="{{ form.image.id_for_label }}"></label>
+                {{ form.image }}
+                <input type="submit" value="Display Image" class="btn btn-success">
+
+            </div>
+
+        </form>
+       
+
+        {% if upload %}
+        <br><br>
+        <style> 
+             body{
+                background: url('https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2019/02/facial-recognition.jpg') no-repeat center fixed;     
+                background-size: cover;
+                
+            }
+             
+        </style>
+        <div class="row">
+            <div class="col">
+            
+                <img class="img-fluid" src="/media/ml_output/process.jpg" alt="">
+            </div>
+
+            <div class="col">
+                  
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td><h2 ><b>Face Image</b></h2></td>
+                                {% for c in results.count  %}
+                                    <td>
+                                        <img class="img-fluid" src="/media/ml_output/roi_{{ c }}.jpg" alt="">
+                                    </td>
+                                {% endfor %}
+    
+                        </tr>
+    
+                    </thead>
+                
+                    <tr>
+                        <td style="background-color:#f65314;"><b>Face Detection Score</b></td>
+                        {% for detect_score in results.face_detect_score  %}
+                            <td style="background-color:#7cbb00;">{{ detect_score }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td style="background-color:#00a1f1;"><b>Name</b></td>
+                        {% for name in results.face_name  %}
+                            <td style="background-color:#ffbb00">{{ name }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f65314;"> <b>Face Score</b></td>
+                        {% for name_score in results.face_name_score  %}
+                            <td style="background-color:#7cbb00;">{{ name_score }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td style="background-color:#00a1f1;"> <b>Emotion</b></td>
+                        {% for emotion in results.emotion_name  %}
+                            <td style="background-color:#ffbb00;">{{ emotion }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td style="background-color:#f65314;"><b>Emotion Score</b></td>
+                        {% for emotion_score in results.emotion_name_score  %}
+                            <td style="background-color:#7cbb00;">{{ emotion_score }}</td>
+                        {% endfor %}
+                    </tr>
+    
+                </table>
+        {% else %}
+       <style>body {    
+        background: url('https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2019/02/facial-recognition.jpg') no-repeat center fixed;     
+        background-size: cover;
+         }
+        </style>
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/microsoft-26-722716.png" alt="" align="right">
+        {% endif %}
+
+            </div>
+        </div>
+       
+        
+       
+    </div>
+    
+    
+    
+</body>
+
+</html>
