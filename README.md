@@ -3,8 +3,9 @@
   <img src="https://media.istockphoto.com/vectors/human-face-recognition-scanning-system-vector-illustration-vector-id1170702687?k=20&m=1170702687&s=612x612&w=0&h=9uLP7HloaQqmeI-S3R_SBB9kDgnq7oGWJlBsfPQlISc=" alt="Logo" width="25" height="25">
 </h1>
 <p align="center">
-<a target="_blank" href="">Video Demo</a> 
-</p>
+  <a target="_blank" href="https://youtu.be/rpJNAE04Qcg"><b>Video Demo</b></a> 
+<a target="_blank" href="https://www.canva.com/design/DAFB-ga9_fI/TfHtofKeef1m95iMQvaDGg/view?utm_content=DAFB-ga9_fI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"><b>. Presentation</b></a>
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
