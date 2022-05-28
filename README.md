@@ -4,8 +4,9 @@
 </h1>
 <p align="center">
   <a target="_blank" href="https://youtu.be/rpJNAE04Qcg"><b>Video Demo</b></a> 
-<a target="_blank" href=" https://www.canva.com/design/DAFB-ga9_fI/TfHtofKeef1m95iMQvaDGg/view?utm_content=DAFB-ga9_fI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"><b>. Presentation</b></a>
-
+  <a target="_blank" href="https://www.canva.com/design/DAFB-ga9_fI/TfHtofKeef1m95iMQvaDGg/view?utm_content=DAFB-ga9_fI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"><b>. Presentation</b></a> 
+  
+</p>
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
