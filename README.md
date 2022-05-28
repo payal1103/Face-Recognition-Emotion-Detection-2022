@@ -98,6 +98,7 @@ Laptops and Tablets
   <!-- INSTALLATIONS -->
 
 ## Getting Started
+<b>NOTE:The machine learning model is created for people mentioned in <a href="celebrities_for_model.txt">celebrities_for_model.txt</a> <br></b>
 To install and run the project on your local system, following are the requirements:
 ### Prerequisites
 Make sure to install the required dependencies 
@@ -113,8 +114,8 @@ Install CMake first to install Dlib on windows
 ### Installation
 
 * Web Application
-To run the web application on your local host, perform the following steps:
-Clone the GitHub Repo
+To run the web application on your local host, perform the following steps: <br>
+Clone the GitHub Repo <br>
 Create Virtual environment from VS Code(Windows)
 ```sh
   python -m venv name_of_virtual_environment 
@@ -129,6 +130,11 @@ Install and freeze Requirements
 ```sh
   pip freeze > requirements.txt 
 ```
+In  cmd terminal 
+```sh
+  python manage.py runserver
+```
+It will generate a local host URL and we are good to go
 <!-- APP TUTORIAL-->
 ## Preview of the Web Application
 ### Register
